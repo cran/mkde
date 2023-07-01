@@ -33,12 +33,12 @@ writeToXDMF(mkde.obj, fname, nodat="NA", cumprob=FALSE)
   \email{jsheppard@sandiegozoo.org} \cr
   Amit Chourasia, MS \cr
   San Diego Supercomputer Center \cr
-  \email{amitsdsc.edu}
+  \email{amit@sdsc.edu}
 }
 \examples{
 library(raster)
 data(condor)
-condor <- condor[1:10,] # simply to make example run more quickly
+condor <- condor[1:20,] # simply to make example run more quickly
 mv.dat <- initializeMovementData(condor$time, condor$x, condor$y, 
 z.obs=condor$z, sig2obs=25.0, sig2obs.z=81.0, t.max=65.0)
 
@@ -58,4 +58,8 @@ mv.dat <- dens.res$move.dat
 
 # Write file (note no file extension!)
 writeToXDMF(mkde.obj, "condor_3dMKDE")
+
+# Clean up files
+unlink("condor_3dMKDE.dat")
+unlink("condor_3dMKDE.xdmf")
 }

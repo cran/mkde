@@ -216,6 +216,7 @@ RcppExport SEXP mkde2dGrid02(SEXP obsT, SEXP obsX, SEXP obsY, SEXP useObs,
     Rcpp::NumericVector Y(obsY); // observed y-coordinates
     Rcpp::IntegerVector isValid(useObs); // move step is flagged for use
     long nObs = T.length();
+    int nObsStep;
     // grid speces
     Rcpp::NumericVector xGrid(xgrid); // cell center coordinates in the x-dimension
     Rcpp::NumericVector yGrid(ygrid); // cell center coordinates in the y-dimension
@@ -247,9 +248,15 @@ RcppExport SEXP mkde2dGrid02(SEXP obsT, SEXP obsX, SEXP obsY, SEXP useObs,
 
     // start computing MKDE
     Rcpp::Rcout << "2D MKDE Computation: STARTING" << std::endl;
+    nObsStep = nObs/50;
+    if (nObsStep == 0) {
+      nObsStep = 1;
+    }
     totalT = 0.0;
     for (int j = 0; j < (nObs - 1); j++) {
-        Rcpp::Rcout << "\tProcessing move step " << (j + 1) << " of " << (nObs - 1) << std::endl;
+      if (j % nObsStep == 0) {
+	Rcpp::Rcout << "\tProcessing move step " << (j + 1) << " of " << (nObs - 1) << std::endl;
+      }
         // report percent complete after each observation
         t0 = T[j];
         t1 = T[j + 1];
@@ -1281,7 +1288,7 @@ RcppExport SEXP writeMKDE3DtoXDMF(SEXP xgrid, SEXP ygrid, SEXP zgrid, SEXP densi
     return Rcpp::wrap(1);
 }
 
-RcppExport SEXP writeRasterToXDMF(SEXP xgrid, SEXP ygrid, SEXP rast, SEXP filenameXDMF, SEXP filenameDAT) {
+RcppExport SEXP writeRasterToXDMF02(SEXP xgrid, SEXP ygrid, SEXP rast, SEXP filenameXDMF, SEXP filenameDAT) {
     Rcpp::NumericVector xGrid(xgrid); // cell centers in the x-dimension
     Rcpp::NumericVector yGrid(ygrid); // cell centers in the y-dimension
     int nX = (long)xGrid.length();
@@ -1383,7 +1390,7 @@ RcppExport SEXP writeRasterToXDMF(SEXP xgrid, SEXP ygrid, SEXP rast, SEXP filena
 }
 
 
-RcppExport SEXP writeRasterToVTK(SEXP xgrid, SEXP ygrid, SEXP elev, SEXP rd, SEXP gr, SEXP bl, SEXP description, SEXP filenameVTK) {
+RcppExport SEXP writeRasterToVTK02(SEXP xgrid, SEXP ygrid, SEXP elev, SEXP rd, SEXP gr, SEXP bl, SEXP description, SEXP filenameVTK) {
     Rcpp::NumericVector xGrid(xgrid); // cell centers in the x-dimension
     Rcpp::NumericVector yGrid(ygrid); // cell centers in the y-dimension
     int nX = (long)xGrid.length();
