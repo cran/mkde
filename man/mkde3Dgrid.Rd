@@ -47,7 +47,6 @@ mkde3Dgrid(mkde.obj, move.dat, t.step, d.thresh)
   \email{jzhu@stat.wisc.edu}
 }
 \examples{
-library(raster)
 data(condor)
 
 # Find min/max coordinates and add buffer

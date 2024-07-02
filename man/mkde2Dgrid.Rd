@@ -47,7 +47,6 @@ mkde2Dgrid(mkde.obj, move.dat, t.step, d.thresh)
   \email{jzhu@stat.wisc.edu}
 }
 \examples{
-library(raster)
 data(panda)
 
 # Find min/max coordinates and add buffer

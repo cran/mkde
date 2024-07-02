@@ -33,8 +33,10 @@ writeRasterToXDMF(rast, fname, nodat="NA")
   \email{amit@sdsc.edu}
 }
 \examples{
-library(raster)
-data(condordem)
+library(terra)
+fpath <- system.file("extdata", "condordem.RDS", package="mkde")
+condordem <- terra::readRDS(fpath)
+
 # Save as XDMF (notice no file extension in file name)
 writeRasterToXDMF(condordem, "condor_dem")
 

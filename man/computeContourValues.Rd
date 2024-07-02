@@ -36,7 +36,6 @@ computeContourValues(mkde.obj, prob)
   \email{jsheppard@sandiegozoo.org}
 }
 \examples{
-library(raster)
 data(condor)
 
 # Find min/max coordinates and add buffer

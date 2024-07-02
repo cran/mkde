@@ -34,14 +34,16 @@ level.
   \email{jsheppard@sandiegozoo.org}
 }
 \examples{
-library(raster)
+library(terra)
+
 # set up MKDE object
-data(pandadem)
+fpath <- system.file("extdata", "pandadem.RDS", package="mkde")
+pandadem <- terra::readRDS(fpath)
 cell.sz <- mean(res(pandadem))
-ext <- extent(pandadem)
+ext <- ext(pandadem)
 nx <- ncol(pandadem)
 ny <- nrow(pandadem)
-mkde.obj <- initializeMKDE2D(ext@xmin, cell.sz, nx, ext@ymin, cell.sz, ny)
+mkde.obj <- initializeMKDE2D(ext$xmin, cell.sz, nx, ext$ymin, cell.sz, ny)
 
 # set up movement data
 data(panda)
