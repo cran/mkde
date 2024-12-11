@@ -8,7 +8,6 @@
 #library(Rcpp)
 #library(sf)
 #library(terra)
-#library(stars)
 
 # ---------------------------------------------------------------------
 # Functions to initialize data structures
@@ -477,8 +476,8 @@ plotMKDE <- function(mkde.obj, z.index=1, probs=c(0.99, 0.95, 0.90, 0.75, 0.5, 0
 # Functions to write output in other formats
 # ---------------------------------------------------------------------
 
-# mkdeToRaster converts an mkde object to a SpatRaster
-mkdeToRaster <- function(mkde.obj) {
+# mkdeToTerra converts an mkde object to a SpatRaster
+mkdeToTerra <- function(mkde.obj) {
   
   sx <- mkde.obj$x[2] - mkde.obj$x[1]
   sy <- mkde.obj$y[2] - mkde.obj$y[1]
@@ -742,14 +741,8 @@ writeInterpolatedPathVTK <- function(move.dat, mkde.obj,
 }
 
 
-readdem_example <- function(demfile = NULL) {
-  # readdem_example()
-  # readdem_example("dem_dataset.RDS")
 
-  if (is.null(demfile)) {
-      dir(system.file("extdata", package = "mkde"))
-  } else {
-    fpath <- system.file("extdata", demfile, package = "mkde", mustWork = TRUE)
-    return(terra::readRDS(fpath))
-  }
-}
+
+
+
+

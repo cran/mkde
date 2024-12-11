@@ -1,6 +1,6 @@
-01e9a7b67ae73f52e10a31eb3f9dbb68 *DESCRIPTION
-319f53ed9589c1a01f9cac6745c1ae35 *NAMESPACE
-d0213a82ed431bccd7f4cb3238b83d89 *R/mkdeFunctions.R
+bf9f82516bf885f7aa36d6048e9959e8 *DESCRIPTION
+70e2959429d0140ecf37dcc8f1be7768 *NAMESPACE
+eced30e116a372f88696412cf02f4504 *R/mkdeFunctions.R
 9c9a41d34699dc98b994d22eb9926b45 *data/condor.RData
 828d18bf30840276476130c5cfb63056 *data/datalist
 2acdcb36126a0e474a68e801bb7a6399 *data/dugong.RData
@@ -13,9 +13,12 @@ b86d2ebd7640fbc6fcd2b4532ed75ac5 *data/panda.RData
 f571cabeea21edd0d68ff5c9f309c617 *man/computeContourValues.Rd
 a8cb7bed62de9fd82e09071549e93b38 *man/computeSizeMKDE.Rd
 62d750783a0028d4404165e0379834e2 *man/condor.Rd
+57a6641980f2c1f13bac5de6d363b61e *man/condordem.Rd
+c276d8d6942c5f55881cdf2e4345d00b *man/condordem120.Rd
 46a2a74c2fb9ae2fda861f37d1e28331 *man/deselectLocationsOutsideBounds.Rd
 9b1df4e0cb5d15263a9c4d19810b3c0c *man/deselectNonMovementSteps.Rd
 41853581ef05fe06245ce856829a0092 *man/dugong.Rd
+939e024e084accb3fbf228a0a2002a39 *man/dugongdem.Rd
 943fcabfdbf168a62b0bc1f58a28719b *man/estVarMKDE.Rd
 bfe332d3dcf4ef5c26874148f34bc457 *man/initializeAreaRaster.Rd
 0206a9259963bb9ffde2cb45bff18c68 *man/initializeDensity.Rd
@@ -27,10 +30,10 @@ bfe332d3dcf4ef5c26874148f34bc457 *man/initializeAreaRaster.Rd
 762fc2349efa70120c38618f93c93206 *man/mkde2Dinteraction.Rd
 bbb3ad285962b3b3f6360a9bb21e5c57 *man/mkde3Dgrid.Rd
 f31035bef0e949b7554c30b110c8efb3 *man/mkde3Dinteraction.Rd
-53580c7f456cb432c32456394cc9ae7a *man/mkdeToRaster.Rd
+22ee4dd2b45ec8fe9a57f362fe27043a *man/mkdeToTerra.Rd
 2d3e19fd9d60209f6a2616651193a056 *man/panda.Rd
+183fcdda6b171a411d3725b6a31ccc79 *man/pandadem.Rd
 d6ceec3cd2a40fbf52a6c0772f1bbbc2 *man/plotMKDE.Rd
-8e1e59c05b30d6f47d247fe467f0d0c8 *man/readdem_example.Rd
 914fedc5bf7668766d095782a9199bf8 *man/setMaximumZfromConstant.Rd
 1eda8c7d756434facc06099b7385ecf6 *man/setMaximumZfromRaster.Rd
 a1eedf643aa65653c7979fc8b4cbbe3f *man/setMinimumZfromConstant.Rd
